@@ -1,0 +1,106 @@
+
+		
+	<!--  nav-bar start   -->
+		<nav class="navbar navbar-light pr-navbar" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="800">
+				<div class="pr_active-user">
+						<p>Admin</p>
+					</div>  <!-- ld_active-user  -->
+                    <!--  setting icon -->
+			<div class="pr_settings-icon-wrap">
+				<a role="button"><p class="pr_username">Logout</p></a>
+			</div>
+		</nav>
+	<!--  nav-bar end  -->	
+	
+		<!-- Page Content -->
+			<div id="pr-page-content-wrapper">
+				<div class="container-fluid">
+
+					<div class="pr-pg-title-wrapper text-center" data-aos="fade-down" data-aos-duration="1200">
+						<h4>Pay Employee</h4>
+					</div> <!-- pr-pg-title-wrapper  -->
+
+					<div class="row">
+
+						<div class="col-12 pr-table-main-wrap">
+				
+							<div class="pr_table-style" data-aos="fade-right" data-aos-duration="1500">
+
+								<div class="pr-table-wrapper" >
+									<table class="table table-bordered table-striped table-hover test-table" id="user-table1">
+										<thead class="thead-dark">
+											<tr>
+			                                    <th class="text-center" scope="col"></th>
+												<th class="text-center" scope="col">Name</th>
+												<th class="text-center" scope="col">Month</th>
+												<th class="text-center" scope="col">Status</th>
+											</tr>
+										</thead>
+										<!-- <tbody>
+											<tr>
+			                                    <td class="text-center">
+													<label class="custom-control custom-checkbox">
+													  <input type="checkbox" class="custom-control-input">
+													  <span class="custom-control-indicator custom-width"></span>
+													  <span class="custom-control-description"></span>
+													</label>
+												</td>
+												<td class="text-center">Neel</td>
+												<td class="text-center">September</td>
+												<td class="text-center pr-done">Done</td>
+											</tr>
+											
+										</tbody> -->
+										<!-- <tbody>
+											<tr>
+			                                    <td class="text-center">
+													<label class="custom-control custom-checkbox">
+													  <input type="checkbox" class="custom-control-input">
+													  <span class="custom-control-indicator custom-width"></span>
+													  <span class="custom-control-description"></span>
+													</label>
+												</td>
+												<td class="text-center">Neel</td>
+												<td class="text-center">September</td>
+												<td class="text-center pr-pending">Pending <a ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+											
+											</tr>
+											
+										</tbody> -->
+
+										<tbody *ngFor="let pay of pays">
+											<tr>
+			                                    <td class="text-center">
+													<label class="custom-control custom-checkbox"></label>
+													  <input type="checkbox" class="custom-control-input">
+													  <span class="custom-control-indicator custom-width"></span>
+													  <span class="custom-control-description"></span>
+													
+												</td>
+												<td class="text-center">{{pay._userId.name.first}}</td>
+												<td class="text-center">{{pay.month}}</td>
+												<td class="text-center pr-pending" *ngIf="pay.isPaid; else next"><a><button class="btn btn-secondary" (click)="update_id(pay._userId.id)"[routerLink]="['/admin/editpayment']"><span>Pending</span></button></a></td>
+											     <ng-template #next><td class="text-center"><label style="color:green">Done</label></td></ng-template>
+											</tr>
+											
+										</tbody>
+										
+										
+
+									</table>
+								</div>  <!--  pr-table-wrapper  -->
+
+							</div> <!--  pr_table-style  -->
+
+						</div> <!--  pr-table-main-wrap  -->
+
+					</div> <!--  row  -->
+
+				</div>  <!--   container-fluid -->
+                
+                   
+				
+			</div> <!-- page-content-wrapper -->
+		
+
+		

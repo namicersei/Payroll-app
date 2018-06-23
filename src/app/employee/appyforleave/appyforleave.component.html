@@ -1,0 +1,145 @@
+
+		
+	<!--  nav-bar start   -->
+		<nav class="navbar navbar-light pr-navbar" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="800">
+				<div class="pr_active-user">
+						<p>Employee</p>
+					</div>  <!-- ld_active-user  -->
+                    <!--  setting icon -->
+			<div class="pr_settings-icon-wrap">
+				<a role="button"><p class="pr_username">Logout</p></a>
+			</div>
+		</nav>
+	<!--  nav-bar end  -->	
+	
+		<!-- Page Content -->
+			<div id="pr-page-content-wrapper" *ngIf="!Message">
+				<div class="container-fluid">
+
+					<div class="pr-pg-title-wrapper text-center" data-aos="fade-down" data-aos-duration="1200">
+						<h4>Apply for leave</h4>
+					</div> <!-- pr-pg-title-wrapper  -->
+
+					<div class="row">
+
+						<div class="col-xl-6 offset-xl-3 col-lg-8 offset-lg-2 pr-table-main-wrap">
+							
+							<div class="pr_table-style1" data-aos="fade-right" data-aos-duration="1500">
+
+								<form class="login100-form validate-form p-l-55 p-r-55 p-t-40">
+								  <div class="form-group row">
+										<label for="staticMonth" class="col-sm-6 col-form-label pr_leave_level">Type</label>
+										<div class="col-sm-6">
+										<div class="form-group">
+											
+															<input type='text' class="form-control" #type/>
+																
+																
+														</div>
+										</div>
+									</div>
+
+									  <h5 class="pr-leave-h5">Duration: </h5>
+
+									  <div class="form-group row">
+									    <label for="staticMonth" class="col-sm-6 col-form-label pr_leave_level">From</label>
+									    <div class="col-sm-6">
+											<div class="form-group">
+									                <div class='input-group date datetimepicker1'>
+									                    <input type="text" class="form-control" #from/>
+									                    <span class="input-group-addon">
+									                        <span class="glyphicon glyphicon-calendar"></span>
+									                    </span>
+									                </div>
+									            </div>
+									    </div>
+									  </div>
+
+									  <div class="form-group row">
+									    <label for="staticMonth" class="col-sm-6 col-form-label pr_leave_level">To</label>
+									    <div class="col-sm-6">
+											 <div class="form-group">
+									                <div class='input-group date datetimepicker1'>
+									                    <input type="text" class="form-control" #to />
+									                    <span class="input-group-addon">
+									                        <span class="glyphicon glyphicon-calendar"></span>
+									                    </span>
+									                </div>
+									            </div>
+									    </div>
+									  </div>
+
+									  <div class="row">
+										    <label for="staticMonth" class="col-sm-6 col-form-label pr_leave_level">Reason</label>
+										    <div class="col-sm-6">
+												 <div class="wrap-input100 validate-input m-b-16" data-validate="Reason">
+												 	<textarea class="form-control textarea-input100" id="exampleFormControlTextarea1" rows="3" rows="4" name="reason" placeholder="Please write a valid reason" #reason ></textarea>
+													<span class="focus-input100"></span>
+												  </div>
+										    </div>
+									  </div>
+
+									  
+									
+
+									<div class="container-login100-form-btn p-b-50 p-t-30">
+										<a class="btn btn-default pr-save-btn" (click)="apply(from.value,to.value,reason.value,type.value)">Submit
+											<i class="icon icon-arrows"></i>
+										</a>
+									</div>
+
+								</form>
+
+							</div> <!--  pr_table-style  -->
+
+						</div> <!--  pr-table-main-wrap  -->
+
+					</div> <!--  row  -->
+
+				</div>  <!--   container-fluid -->
+                
+                   
+				
+			</div> <!-- page-content-wrapper -->
+		
+
+		
+
+
+
+
+
+			<div id="pr-page-content-wrapper" *ngIf="Message">
+				<div class="container-fluid">
+
+					<div class="pr-pg-title-wrapper text-center" data-aos="fade-down" data-aos-duration="1200">
+						
+					</div> <!-- pr-pg-title-wrapper  -->
+
+					<div class="row">
+
+						<div class="col-xl-6 offset-xl-3 col-lg-8 offset-lg-2 pr-table-main-wrap">
+							
+							<div class="pr_table-style1" data-aos="fade-right" data-aos-duration="1500">
+
+								<form class="login100-form validate-form p-l-55 p-r-55 p-t-40">
+										<div class="alert alert-success" role="alert">
+										<label>Successfully applied for leave!</label>
+										</div>
+										<button class="btn btn-success" [routerLink]="['/employee/leavestatus']">Check</button>
+							</form>
+
+							</div> <!--  pr_table-style  -->
+
+						</div> <!--  pr-table-main-wrap  -->
+
+					</div> <!--  row  -->
+
+				</div>  <!--   container-fluid -->
+                
+                   
+				
+			</div> <!-- page-content-wrapper -->
+		
+
+		

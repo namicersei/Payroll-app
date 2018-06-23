@@ -1,0 +1,68 @@
+
+		
+	<!--  nav-bar start   -->
+		<nav class="navbar navbar-light pr-navbar" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="800">
+				<div class="pr_active-user">
+						<p>Admin</p>
+					</div>  <!-- ld_active-user  -->
+                    <!--  setting icon -->
+			<div class="pr_settings-icon-wrap">
+				<a role="button"><p class="pr_username">Logout</p></a>
+			</div>
+		</nav>
+	<!--  nav-bar end  -->	
+	
+		<!-- Page Content -->
+			<div id="pr-page-content-wrapper">
+				<div class="container-fluid">
+
+					<div class="pr-pg-title-wrapper text-center" data-aos="fade-down" data-aos-duration="1200">
+						<h4>Pay Employee</h4>
+					</div> <!-- pr-pg-title-wrapper  -->
+
+					<div class="row">
+
+						<div class="col-xl-6 offset-xl-3 col-lg-8 offset-lg-2 pr-table-main-wrap">
+							
+							<div class="pr_table-style1" data-aos="fade-right" data-aos-duration="1500">
+
+								<form class="login100-form validate-form p-l-55 p-r-55 p-t-40">
+									<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter name">
+										<input class="input100" type="text" name="name" placeholder="Name" #name>
+										<span class="focus-input100"></span>
+									</div>
+									<div class="wrap-input100 validate-input m-b-16" data-validate="bonus">
+										<input class="input100" type="text" name="bonus" placeholder="Bonus" #bonus>
+										<span class="focus-input100"></span>
+									</div>
+									<div class="wrap-input100 validate-input m-b-16" data-validate="deduction">
+										<input class="input100" type="text" name="deduction" placeholder="Deduction" #deduction>
+										<span class="focus-input100"></span>
+									</div>
+									<div class="wrap-input100 validate-input m-b-16" data-validate="limit">
+										<input class="input100" type="number" name="limit" placeholder="Limit" #limit>
+										<span class="focus-input100"></span>
+									</div>
+
+									<div class="container-login100-form-btn p-b-50 p-t-30">
+										<a class="btn btn-default pr-save-btn" (click)="pay_emp(bonus.value,deduction.value,limit.value)">Pay
+											<i class="icon icon-arrows"></i>
+										</a>
+									</div>
+
+								</form>
+
+							</div> <!--  pr_table-style  -->
+
+						</div> <!--  pr-table-main-wrap  -->
+
+					</div> <!--  row  -->
+
+				</div>  <!--   container-fluid -->
+                
+                   
+				
+			</div> <!-- page-content-wrapper -->
+		
+
+		<!-- Bootstrap core JavaScript -->

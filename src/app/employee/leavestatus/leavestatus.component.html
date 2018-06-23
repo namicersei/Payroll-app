@@ -1,0 +1,95 @@
+
+		
+	<!--  nav-bar start   -->
+		<nav class="navbar navbar-light pr-navbar" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="800">
+				<div class="pr_active-user">
+						<p>Employee</p>
+					</div>  <!-- ld_active-user  -->
+                    <!--  setting icon -->
+			<div class="pr_settings-icon-wrap">
+				<a role="button"><p class="pr_username">Logout</p></a>
+			</div>
+		</nav>
+	<!--  nav-bar end  -->	
+	
+		<!-- Page Content -->
+			<div id="pr-page-content-wrapper">
+				<div class="container-fluid">
+
+					<div class="pr-pg-title-wrapper text-center" data-aos="fade-down" data-aos-duration="1200">
+						<h4>Leaves Status</h4>
+						<span> CL Balance: 20 </span>
+						<span> PL Balance: 20 </span>
+					</div> <!-- pr-pg-title-wrapper  -->
+
+					<div class="row">
+
+						<div class="col-12 pr-table-main-wrap">
+				
+							<div class="pr_table-style" data-aos="fade-right" data-aos-duration="1500">
+
+								<div class="pr-table-wrapper" >
+									<table class="table table-bordered table-striped table-hover test-table" id="user-table1">
+										<thead class="thead-dark">
+											<tr>
+			                                    <th class="text-center" scope="col"></th>
+												<th class="text-center" scope="col">Applied</th>
+												<th class="text-center" scope="col">From</th>
+												<th class="text-center" scope="col">To</th>
+												<th class="text-center" scope="col">Approved</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+			                                    <td class="text-center">
+													<label class="custom-control custom-checkbox">
+													  <input type="checkbox" class="custom-control-input">
+													  <span class="custom-control-indicator custom-width"></span>
+													  <span class="custom-control-description"></span>
+													</label>
+												</td>
+												<td class="text-center">27.02.2018</td>
+												<td class="text-center">29.02.2018</td>
+												<td class="text-center">8.03.2018</td>
+												<td class="text-center"><i class="fa fa-check pr-tick"></i></td>
+											
+											</tr>
+											
+										</tbody>
+										
+										<tbody *ngFor="let leave of leaveArray">
+											<tr>
+			                                    <td class="text-center">
+													<label class="custom-control custom-checkbox">
+													  <input type="checkbox" class="custom-control-input">
+													  <span class="custom-control-indicator custom-width"></span>
+													  <span class="custom-control-description"></span>
+													</label>
+												</td>
+												<td class="text-center">{{leave.requestDate|date:'fullDate'}}</td>
+												<td class="text-center">{{leave.startDate|date:'fullDate'}}</td>
+												<td class="text-center">{{leave.endDate|date:'fullDate'}}</td>
+												<td class="text-center"*ngIf="leave.isRejected; else next" ><i class="fa fa-times pr-cross"></i></td>
+											   <ng-template #next><td class="text-center" *ngIf="isApproved; else next_again"><i class="fa fa-check pr-tick"></i></td></ng-template> 
+                                                <ng-template #next_again><td class="text-center"><label style="color:grey">Pending</label></td></ng-template>
+											</tr>
+										</tbody>
+										
+
+									</table>
+								</div>  <!--  pr-table-wrapper  -->
+
+							</div> <!--  pr_table-style  -->
+
+						</div> <!--  pr-table-main-wrap  -->
+
+					</div> <!--  row  -->
+
+				</div>  <!--   container-fluid -->
+                
+                   
+				
+			</div> <!-- page-content-wrapper -->
+		
+
+		
